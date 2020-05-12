@@ -1,0 +1,2 @@
+[12-May-2020 22:13:19 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/i5au8mn4jw7t/public_html/ecommerce/vendor/zendframework/zend-diactoros/src/functions/marshal_uri_from_sapi.php on line 83
+[12-May-2020 22:13:48 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/i5au8mn4jw7t/public_html/ecommerce/vendor/zendframework/zend-diactoros/src/functions/marshal_uri_from_sapi.php on line 83

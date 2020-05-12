@@ -24,18 +24,28 @@ class UpdateController extends Controller
     }
 
     public function step1() {
-        if(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.2'){
-            $sql_path = base_path('sqlupdates/v23.sql');
+        if(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.3'){
+            $sql_path = base_path('sqlupdates/v24.sql');
             DB::unprepared(file_get_contents($sql_path));
         }
-        if(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.1'){
+        elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.2'){
+            $sql_path = base_path('sqlupdates/v23.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+        }
+        elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.1'){
             $sql_path = base_path('sqlupdates/v22.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
         }
-        if(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.0'){
+        elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '2.0'){
             $sql_path = base_path('sqlupdates/v21.sql');
             DB::unprepared(file_get_contents($sql_path));
 
@@ -43,6 +53,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v23.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
             DB::unprepared(file_get_contents($sql_path));
         }
         elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.9'){
@@ -56,6 +69,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v23.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             $this->convertProducts();
@@ -75,8 +91,13 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
-        if(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.7'){
+        elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.7'){
             $sql_path = base_path('sqlupdates/v18.sql');
             DB::unprepared(file_get_contents($sql_path));
 
@@ -94,6 +115,11 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
         elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.6'){
             $sql_path = base_path('sqlupdates/v17.sql');
@@ -116,6 +142,11 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
         elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.5'){
             $sql_path = base_path('sqlupdates/v16.sql');
@@ -141,6 +172,11 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
         elseif(BusinessSetting::where('type', 'current_version')->first() != null && BusinessSetting::where('type', 'current_version')->first()->value == '1.4'){
             $sql_path = base_path('sqlupdates/v15.sql');
@@ -169,6 +205,11 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
         else{
             $sql_path = base_path('shop_update.sql');
@@ -233,6 +274,11 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v23.sql');
             DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v24.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $this->convertProducts();
         }
 
         return redirect('step2');
